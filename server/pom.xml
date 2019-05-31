@@ -10,6 +10,23 @@
 
     <artifactId>portum-server</artifactId>
 
+    <dependencies>
+        <!-- Theresa -->
+        <dependency>
+            <groupId>de.d3adspace.theresa</groupId>
+            <artifactId>theresa-core</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
+        <!-- Netty -->
+        <dependency>
+            <groupId>de.d3adspace.constrictor</groupId>
+            <artifactId>constrictor-netty</artifactId>
+            <version>2.2</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
