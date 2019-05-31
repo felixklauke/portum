@@ -20,6 +20,7 @@ notifications:
 ####################
 script:
   - mvn clean compile package install
+  - mvn verify sonar:sonar -Dsonar.host.url=https://sonar.klauke-enterprises.com -Dsonar.projectKey=portum -Dsonar.login=$SONAR_TOKEN
 
 ##################
 ### Deployment ###
