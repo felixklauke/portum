@@ -20,3 +20,13 @@ notifications:
 ####################
 script:
   - mvn clean compile package install
+
+##################
+### Deployment ###
+##################
+deploy:
+  provider: script
+  script: mvn deploy
+  on:
+    branch: master
+    tags: true
