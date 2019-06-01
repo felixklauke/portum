@@ -29,4 +29,13 @@ public class Vote {
     public String getTimestamp() {
         return timestamp;
     }
+
+    @Override
+    public String toString() {
+        return "Vote{" + "username='" + username + '\'' +
+                ", service='" + service + '\'' +
+                ", timestamp='" + timestamp + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }
