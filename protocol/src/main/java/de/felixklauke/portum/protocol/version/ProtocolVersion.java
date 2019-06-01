@@ -2,7 +2,7 @@ package de.felixklauke.portum.protocol.version;
 
 public enum ProtocolVersion {
 
-    ONE,
-    TWO,
+    V1,
+    V2,
     UNKNOWN;
 }
