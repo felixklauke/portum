@@ -25,6 +25,6 @@ public class PortumChannelInitializer extends ChannelInitializer<SocketChannel> 
 
         pipeline.addLast("protocolHandler", protocolHandler);
         pipeline.addLast("voteDecoder", new PortumVoteDecoder(serverConfig));
-        pipeline.addLast("voteHandler", new PortumVoteHandler());
+        pipeline.addLast("voteHandler", new PortumVoteHandler(serverConfig));
     }
 }
