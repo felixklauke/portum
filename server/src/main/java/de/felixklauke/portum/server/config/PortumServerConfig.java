@@ -4,6 +4,7 @@ import de.felixklauke.portum.protocol.listener.VoteListener;
 
 import java.security.KeyPair;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class PortumServerConfig {
@@ -14,6 +15,11 @@ public class PortumServerConfig {
     private final KeyPair keyPair;
 
     public PortumServerConfig(List<VoteListener> listeners, String host, int port, KeyPair keyPair) {
+
+        Objects.requireNonNull(listeners, "Listeners cannot be null.");
+        Objects.requireNonNull(host, "Host cannot be null.");
+        Objects.requireNonNull(keyPair, "Key Pair cannot be null.");
+
         this.listeners = new CopyOnWriteArrayList<>(listeners);
         this.host = host;
         this.port = port;
