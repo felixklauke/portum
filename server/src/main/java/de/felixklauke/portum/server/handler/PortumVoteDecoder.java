@@ -22,7 +22,7 @@ public class PortumVoteDecoder extends ByteToMessageDecoder {
 
     private final PortumServerConfig serverConfig;
 
-    public PortumVoteDecoder(PortumServerConfig serverConfig) {
+    PortumVoteDecoder(PortumServerConfig serverConfig) {
         this.serverConfig = serverConfig;
     }
 
