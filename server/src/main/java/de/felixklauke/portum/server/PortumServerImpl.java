@@ -19,7 +19,7 @@ public class PortumServerImpl implements PortumServer {
     private Channel channel;
 
     @Inject
-    public PortumServerImpl(PortumServerConfig serverConfig, ServerBootstrap serverBootstrap) {
+    PortumServerImpl(PortumServerConfig serverConfig, ServerBootstrap serverBootstrap) {
         this.serverConfig = serverConfig;
         this.serverBootstrap = serverBootstrap;
     }
