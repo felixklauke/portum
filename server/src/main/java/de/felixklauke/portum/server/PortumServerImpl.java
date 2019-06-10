@@ -3,6 +3,7 @@ package de.felixklauke.portum.server;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.JdkFutureAdapters;
 import com.google.common.util.concurrent.ListenableFuture;
+import de.felixklauke.portum.protocol.listener.VoteListener;
 import de.felixklauke.portum.server.config.PortumServerConfig;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
@@ -10,6 +11,7 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 
 import javax.inject.Inject;
+import java.util.List;
 
 public class PortumServerImpl implements PortumServer {
 
@@ -50,5 +52,12 @@ public class PortumServerImpl implements PortumServer {
         serverBootstrap.childGroup().shutdownGracefully();
 
         return Futures.immediateFuture(null);
+    }
+
+    @Override
+    public void registerVoteListener(VoteListener voteListener) {
+
+        List<VoteListener> listeners = serverConfig.getListeners();
+        listeners.add(voteListener);
     }
 }
