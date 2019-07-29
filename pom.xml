@@ -42,7 +42,7 @@
       <url>https://repository.klauke-enterprises.com/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
-  <groupId>de.felixklauke.portum</groupId>
+  <groupId>com.felixklauke.portum</groupId>
   <modelVersion>4.0.0</modelVersion>
   <modules>
     <module>server</module>
@@ -67,6 +67,6 @@
     </repository>
   </repositories>
 
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
 
 </project>

@@ -1,7 +1,7 @@
-package de.felixklauke.portum.server;
+package com.felixklauke.portum.server;
 
 import com.google.common.util.concurrent.ListenableFuture;
-import de.felixklauke.portum.protocol.listener.VoteListener;
+import com.felixklauke.portum.protocol.listener.VoteListener;
 
 public interface PortumServer {
 

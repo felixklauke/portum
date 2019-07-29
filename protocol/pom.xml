@@ -7,8 +7,8 @@
 
   <parent>
     <artifactId>portum-parent</artifactId>
-    <groupId>de.felixklauke.portum</groupId>
-    <version>1.0.0-SNAPSHOT</version>
+    <groupId>com.felixklauke.portum</groupId>
+    <version>1.0.0</version>
   </parent>
 
 

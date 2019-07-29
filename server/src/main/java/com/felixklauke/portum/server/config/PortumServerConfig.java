@@ -1,6 +1,6 @@
-package de.felixklauke.portum.server.config;
+package com.felixklauke.portum.server.config;
 
-import de.felixklauke.portum.protocol.listener.VoteListener;
+import com.felixklauke.portum.protocol.listener.VoteListener;
 import java.security.KeyPair;
 import java.util.List;
 import java.util.Objects;

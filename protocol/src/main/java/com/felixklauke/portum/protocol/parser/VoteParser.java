@@ -1,6 +1,6 @@
-package de.felixklauke.portum.protocol.parser;
+package com.felixklauke.portum.protocol.parser;
 
-import de.felixklauke.portum.protocol.model.Vote;
+import com.felixklauke.portum.protocol.model.Vote;
 import java.util.StringTokenizer;
 
 public class VoteParser {

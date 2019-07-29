@@ -10,7 +10,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>de.felixklauke.portum.server.PortumServerBootstrap</mainClass>
+              <mainClass>com.felixklauke.portum.server.PortumServerBootstrap</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -37,9 +37,9 @@
     </dependency>
     <dependency>
       <artifactId>portum-protocol</artifactId>
-      <groupId>de.felixklauke.portum</groupId>
+      <groupId>com.felixklauke.portum</groupId>
       <scope>compile</scope>
-      <version>1.0.0-SNAPSHOT</version>
+      <version>1.0.0</version>
     </dependency>
   </dependencies>
 
@@ -47,8 +47,8 @@
 
   <parent>
     <artifactId>portum-parent</artifactId>
-    <groupId>de.felixklauke.portum</groupId>
-    <version>1.0.0-SNAPSHOT</version>
+    <groupId>com.felixklauke.portum</groupId>
+    <version>1.0.0</version>
   </parent>
 
 </project>

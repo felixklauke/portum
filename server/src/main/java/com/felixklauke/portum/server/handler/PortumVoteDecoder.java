@@ -1,8 +1,8 @@
-package de.felixklauke.portum.server.handler;
+package com.felixklauke.portum.server.handler;
 
-import de.felixklauke.portum.protocol.model.Vote;
-import de.felixklauke.portum.protocol.parser.VoteParser;
-import de.felixklauke.portum.server.config.PortumServerConfig;
+import com.felixklauke.portum.protocol.model.Vote;
+import com.felixklauke.portum.protocol.parser.VoteParser;
+import com.felixklauke.portum.server.config.PortumServerConfig;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;

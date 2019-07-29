@@ -1,10 +1,10 @@
-package de.felixklauke.portum.server;
+package com.felixklauke.portum.server;
 
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.JdkFutureAdapters;
 import com.google.common.util.concurrent.ListenableFuture;
-import de.felixklauke.portum.protocol.listener.VoteListener;
-import de.felixklauke.portum.server.config.PortumServerConfig;
+import com.felixklauke.portum.protocol.listener.VoteListener;
+import com.felixklauke.portum.server.config.PortumServerConfig;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;

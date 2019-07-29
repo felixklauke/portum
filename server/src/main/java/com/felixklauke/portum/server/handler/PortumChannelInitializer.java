@@ -1,6 +1,6 @@
-package de.felixklauke.portum.server.handler;
+package com.felixklauke.portum.server.handler;
 
-import de.felixklauke.portum.server.config.PortumServerConfig;
+import com.felixklauke.portum.server.config.PortumServerConfig;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;

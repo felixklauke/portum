@@ -1,13 +1,13 @@
-package de.felixklauke.portum.server.module;
+package com.felixklauke.portum.server.module;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
-import de.felixklauke.portum.server.PortumServer;
-import de.felixklauke.portum.server.PortumServerImpl;
-import de.felixklauke.portum.server.config.PortumServerConfig;
-import de.felixklauke.portum.server.handler.PortumChannelInitializer;
-import de.felixklauke.portum.server.handler.PortumProtocolHandler;
-import de.felixklauke.portum.server.provider.ServerBootstrapProvider;
+import com.felixklauke.portum.server.PortumServer;
+import com.felixklauke.portum.server.PortumServerImpl;
+import com.felixklauke.portum.server.config.PortumServerConfig;
+import com.felixklauke.portum.server.handler.PortumChannelInitializer;
+import com.felixklauke.portum.server.handler.PortumProtocolHandler;
+import com.felixklauke.portum.server.provider.ServerBootstrapProvider;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;

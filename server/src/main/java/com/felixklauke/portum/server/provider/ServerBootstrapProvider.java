@@ -1,4 +1,4 @@
-package de.felixklauke.portum.server.provider;
+package com.felixklauke.portum.server.provider;
 
 import de.d3adspace.constrictor.netty.NettyUtils;
 import io.netty.bootstrap.ServerBootstrap;

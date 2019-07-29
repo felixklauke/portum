@@ -1,4 +1,4 @@
-package de.felixklauke.portum.protocol.model;
+package com.felixklauke.portum.protocol.model;
 
 public class Vote {
 

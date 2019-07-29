@@ -1,4 +1,4 @@
-package de.felixklauke.portum.protocol.version;
+package com.felixklauke.portum.protocol.version;
 
 public enum ProtocolVersion {
 
