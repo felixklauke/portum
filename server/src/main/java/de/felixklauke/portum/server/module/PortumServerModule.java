@@ -14,24 +14,25 @@ import io.netty.channel.socket.SocketChannel;
 
 public class PortumServerModule extends AbstractModule {
 
-    private final PortumServerConfig serverConfig;
+  private final PortumServerConfig serverConfig;
 
-    public PortumServerModule(PortumServerConfig serverConfig) {
-        this.serverConfig = serverConfig;
-    }
+  public PortumServerModule(PortumServerConfig serverConfig) {
+    this.serverConfig = serverConfig;
+  }
 
-    @Override
-    protected void configure() {
+  @Override
+  protected void configure() {
 
-        bind(PortumServerConfig.class).toInstance(serverConfig);
-        bind(PortumServer.class).to(PortumServerImpl.class);
+    bind(PortumServerConfig.class).toInstance(serverConfig);
+    bind(PortumServer.class).to(PortumServerImpl.class);
 
-        bind(ServerBootstrap.class).toProvider(ServerBootstrapProvider.class);
-    }
+    bind(ServerBootstrap.class).toProvider(ServerBootstrapProvider.class);
+  }
 
-    @Provides
-    public ChannelInitializer<SocketChannel> provideServerChannelInitializer(PortumProtocolHandler protocolHandler, PortumServerConfig serverConfig) {
+  @Provides
+  public ChannelInitializer<SocketChannel> provideServerChannelInitializer(
+      PortumProtocolHandler protocolHandler, PortumServerConfig serverConfig) {
 
-        return new PortumChannelInitializer(protocolHandler, serverConfig);
-    }
+    return new PortumChannelInitializer(protocolHandler, serverConfig);
+  }
 }

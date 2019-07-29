@@ -5,9 +5,9 @@ import de.felixklauke.portum.protocol.listener.VoteListener;
 
 public interface PortumServer {
 
-    ListenableFuture<Void> start();
+  ListenableFuture<Void> start();
 
-    ListenableFuture<Void> stop();
+  ListenableFuture<Void> stop();
 
-    void registerVoteListener(VoteListener voteListener);
+  void registerVoteListener(VoteListener voteListener);
 }

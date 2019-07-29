@@ -1,7 +1,6 @@
 package de.felixklauke.portum.server.config;
 
 import de.felixklauke.portum.protocol.listener.VoteListener;
-
 import java.security.KeyPair;
 import java.util.List;
 import java.util.Objects;
@@ -10,43 +9,44 @@ import java.util.logging.Logger;
 
 public class PortumServerConfig {
 
-    private final Logger logger = Logger.getLogger(PortumServerConfig.class.getSimpleName());
+  private final Logger logger = Logger.getLogger(PortumServerConfig.class.getSimpleName());
 
-    private final List<VoteListener> listeners;
-    private final String host;
-    private final int port;
-    private final KeyPair keyPair;
+  private final List<VoteListener> listeners;
+  private final String host;
+  private final int port;
+  private final KeyPair keyPair;
 
-    public PortumServerConfig(List<VoteListener> listeners, String host, int port, KeyPair keyPair) {
+  public PortumServerConfig(List<VoteListener> listeners, String host, int port, KeyPair keyPair) {
 
-        Objects.requireNonNull(listeners, "Listeners cannot be null.");
-        Objects.requireNonNull(host, "Host cannot be null.");
-        Objects.requireNonNull(keyPair, "Key Pair cannot be null.");
+    Objects.requireNonNull(listeners, "Listeners cannot be null.");
+    Objects.requireNonNull(host, "Host cannot be null.");
+    Objects.requireNonNull(keyPair, "Key Pair cannot be null.");
 
-        // Warn on empty listeners
-        if (listeners.size() == 0) {
-            logger.warning("You didn't specify any listeners at the starting. Ensure to register some later on!");
-        }
-
-        this.listeners = new CopyOnWriteArrayList<>(listeners);
-        this.host = host;
-        this.port = port;
-        this.keyPair = keyPair;
+    // Warn on empty listeners
+    if (listeners.size() == 0) {
+      logger.warning(
+          "You didn't specify any listeners at the starting. Ensure to register some later on!");
     }
 
-    public List<VoteListener> getListeners() {
-        return listeners;
-    }
+    this.listeners = new CopyOnWriteArrayList<>(listeners);
+    this.host = host;
+    this.port = port;
+    this.keyPair = keyPair;
+  }
 
-    public KeyPair getKeyPair() {
-        return keyPair;
-    }
+  public List<VoteListener> getListeners() {
+    return listeners;
+  }
 
-    public String getHost() {
-        return host;
-    }
+  public KeyPair getKeyPair() {
+    return keyPair;
+  }
 
-    public int getPort() {
-        return port;
-    }
+  public String getHost() {
+    return host;
+  }
+
+  public int getPort() {
+    return port;
+  }
 }
