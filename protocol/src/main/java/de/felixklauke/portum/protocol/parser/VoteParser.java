@@ -13,7 +13,7 @@ public class VoteParser {
   /**
    * The vote integrity token to check decryption.
    */
-  private static final String VOTE_INTEGRITY_TOKEN = "";
+  private static final String VOTE_INTEGRITY_TOKEN = "VOTE";
 
   /**
    * Parse a vote from a string.
