@@ -13,7 +13,7 @@ public class PortumChannelInitializer extends ChannelInitializer<SocketChannel> 
 
   @Inject
   public PortumChannelInitializer(PortumProtocolHandler protocolHandler,
-      PortumServerConfig serverConfig) {
+    PortumServerConfig serverConfig) {
     this.protocolHandler = protocolHandler;
     this.serverConfig = serverConfig;
   }

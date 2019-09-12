@@ -1,9 +1,9 @@
 package com.felixklauke.portum.server;
 
-import de.d3adspace.theresa.core.Theresa;
-import de.d3adspace.theresa.core.TheresaFactory;
 import com.felixklauke.portum.server.config.PortumServerConfig;
 import com.felixklauke.portum.server.module.PortumServerModule;
+import de.d3adspace.theresa.core.Theresa;
+import de.d3adspace.theresa.core.TheresaFactory;
 import java.util.Objects;
 
 public class PortumServerFactory {

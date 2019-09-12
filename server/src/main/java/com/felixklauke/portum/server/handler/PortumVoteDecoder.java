@@ -27,13 +27,13 @@ public class PortumVoteDecoder extends ByteToMessageDecoder {
 
   @Override
   protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf,
-      List<Object> list) {
+    List<Object> list) {
 
     // Check message size
     int readableBytes = byteBuf.readableBytes();
     if (readableBytes != 256) {
       throw new IllegalStateException(
-          "Message size of v1 payloads has to be " + MESSAGE_SIZE + " bytes.");
+        "Message size of v1 payloads has to be " + MESSAGE_SIZE + " bytes.");
     }
 
     // Read message into array

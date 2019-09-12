@@ -33,9 +33,9 @@ public class Vote {
   @Override
   public String toString() {
     return "Vote{" + "username='" + username + '\'' +
-        ", service='" + service + '\'' +
-        ", timestamp='" + timestamp + '\'' +
-        ", address='" + address + '\'' +
-        '}';
+      ", service='" + service + '\'' +
+      ", timestamp='" + timestamp + '\'' +
+      ", address='" + address + '\'' +
+      '}';
   }
 }

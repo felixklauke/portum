@@ -1,10 +1,10 @@
 package com.felixklauke.portum.server;
 
+import com.felixklauke.portum.protocol.listener.VoteListener;
+import com.felixklauke.portum.server.config.PortumServerConfig;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.JdkFutureAdapters;
 import com.google.common.util.concurrent.ListenableFuture;
-import com.felixklauke.portum.protocol.listener.VoteListener;
-import com.felixklauke.portum.server.config.PortumServerConfig;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -29,8 +29,8 @@ public class PortumServerImpl implements PortumServer {
   public ListenableFuture<Void> start() {
 
     ChannelFuture channelFuture = serverBootstrap
-        .bind(serverConfig.getHost(), serverConfig.getPort())
-        .syncUninterruptibly();
+      .bind(serverConfig.getHost(), serverConfig.getPort())
+      .syncUninterruptibly();
 
     channelFuture.addListener((ChannelFutureListener) future -> {
       channel = future.channel();
@@ -44,7 +44,7 @@ public class PortumServerImpl implements PortumServer {
 
     if (channel == null) {
       return Futures
-          .immediateFailedFuture(new IllegalStateException("Can't stop a nun running server."));
+        .immediateFailedFuture(new IllegalStateException("Can't stop a nun running server."));
     }
 
     channel.close();

@@ -31,9 +31,9 @@ public class ServerBootstrapProvider implements Provider<ServerBootstrap> {
 
     // Construct server bootstrap
     return new ServerBootstrap()
-        .group(bossGroup, workerGroup)
-        .childHandler(channelInitializer)
-        .childOption(ChannelOption.TCP_NODELAY, true)
-        .channel(serverSocketChannel);
+      .group(bossGroup, workerGroup)
+      .childHandler(channelInitializer)
+      .childOption(ChannelOption.TCP_NODELAY, true)
+      .channel(serverSocketChannel);
   }
 }

@@ -25,7 +25,7 @@ public class PortumServerConfig {
     // Warn on empty listeners
     if (listeners.size() == 0) {
       logger.warning(
-          "You didn't specify any listeners at the starting. Ensure to register some later on!");
+        "You didn't specify any listeners at the starting. Ensure to register some later on!");
     }
 
     this.listeners = new CopyOnWriteArrayList<>(listeners);
