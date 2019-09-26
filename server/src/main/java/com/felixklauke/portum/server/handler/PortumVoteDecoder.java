@@ -1,7 +1,6 @@
 package com.felixklauke.portum.server.handler;
 
 import com.felixklauke.portum.protocol.model.Vote;
-import com.felixklauke.portum.protocol.parser.VoteParser;
 import com.felixklauke.portum.server.config.PortumServerConfig;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -45,7 +44,7 @@ public class PortumVoteDecoder extends ByteToMessageDecoder {
 
     // Parse Vote
     String string = new String(bytes);
-    Vote vote = VoteParser.parseVote(string);
+    Vote vote = Vote.fromString(string);
 
     list.add(vote);
   }
