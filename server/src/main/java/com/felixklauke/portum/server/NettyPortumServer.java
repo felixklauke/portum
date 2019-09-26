@@ -12,7 +12,7 @@ import io.netty.channel.ChannelFutureListener;
 import java.util.List;
 import javax.inject.Inject;
 
-public class PortumServerImpl implements PortumServer {
+public class NettyPortumServer implements PortumServer {
 
   private final PortumServerConfig serverConfig;
   private final ServerBootstrap serverBootstrap;
@@ -20,7 +20,7 @@ public class PortumServerImpl implements PortumServer {
   private Channel channel;
 
   @Inject
-  PortumServerImpl(PortumServerConfig serverConfig, ServerBootstrap serverBootstrap) {
+  NettyPortumServer(PortumServerConfig serverConfig, ServerBootstrap serverBootstrap) {
     this.serverConfig = serverConfig;
     this.serverBootstrap = serverBootstrap;
   }

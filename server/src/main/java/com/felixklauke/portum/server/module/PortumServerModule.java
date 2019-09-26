@@ -1,7 +1,7 @@
 package com.felixklauke.portum.server.module;
 
 import com.felixklauke.portum.server.PortumServer;
-import com.felixklauke.portum.server.PortumServerImpl;
+import com.felixklauke.portum.server.NettyPortumServer;
 import com.felixklauke.portum.server.config.PortumServerConfig;
 import com.felixklauke.portum.server.handler.PortumChannelInitializer;
 import com.felixklauke.portum.server.handler.PortumProtocolHandler;
@@ -24,7 +24,7 @@ public class PortumServerModule extends AbstractModule {
   protected void configure() {
 
     bind(PortumServerConfig.class).toInstance(serverConfig);
-    bind(PortumServer.class).to(PortumServerImpl.class);
+    bind(PortumServer.class).to(NettyPortumServer.class);
 
     bind(ServerBootstrap.class).toProvider(ServerBootstrapProvider.class);
   }
