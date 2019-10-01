@@ -4,6 +4,11 @@ Modern and flexible implementation of the minecraft votifier protocol. Thought a
 Portum uses [theresa](https://github.com/FelixKlauke/theresa) for dependency injection and 
 [constrictor](https://github.com/d3adspace/constrictor) for networking.
 
+# Build status
+|             	| Build Status                                                                                                                                              	| 
+|-------------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| Master      	| [![Build Status](https://travis-ci.org/felixklauke/portum.svg?branch=master)](https://travis-ci.org/felixklauke/portum) 	| 
+
 # Installation
 **Maven Repositories**
 
