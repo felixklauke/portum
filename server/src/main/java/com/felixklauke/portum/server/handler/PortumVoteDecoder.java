@@ -70,7 +70,7 @@ public class PortumVoteDecoder extends ByteToMessageDecoder {
     try {
       return cipher.doFinal(bytes);
     } catch (IllegalBlockSizeException | BadPaddingException e) {
-      throw new IllegalStateException("Error during decrption.", e);
+      throw new IllegalStateException("Error during decryption.", e);
     }
   }
 }
