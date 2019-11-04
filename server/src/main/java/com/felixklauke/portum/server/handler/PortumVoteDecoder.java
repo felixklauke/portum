@@ -1,12 +1,13 @@
 package com.felixklauke.portum.server.handler;
 
 import com.felixklauke.portum.protocol.model.Vote;
-import com.felixklauke.portum.server.config.PortumServerConfig;
+import com.google.common.base.Preconditions;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
 import java.util.List;
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -18,10 +19,15 @@ public class PortumVoteDecoder extends ByteToMessageDecoder {
   private static final String CIPHER = "RSA";
   private static final int MESSAGE_SIZE = 256;
 
-  private final PortumServerConfig serverConfig;
+  private final PrivateKey privateKey;
 
-  PortumVoteDecoder(PortumServerConfig serverConfig) {
-    this.serverConfig = serverConfig;
+  private PortumVoteDecoder(PrivateKey privateKey) {
+    this.privateKey = privateKey;
+  }
+
+  public static PortumVoteDecoder withPrivateKey(PrivateKey privateKey) {
+    Preconditions.checkNotNull(privateKey);
+    return new PortumVoteDecoder(privateKey);
   }
 
   @Override
@@ -58,7 +64,7 @@ public class PortumVoteDecoder extends ByteToMessageDecoder {
     Cipher cipher;
     try {
       cipher = Cipher.getInstance(CIPHER);
-      cipher.init(Cipher.DECRYPT_MODE, serverConfig.getKeyPair().getPrivate());
+      cipher.init(Cipher.DECRYPT_MODE, privateKey);
     } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
       throw new IllegalStateException("Couldn't get cipher.", e);
     } catch (InvalidKeyException e) {

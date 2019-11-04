@@ -22,8 +22,10 @@ public class PortumChannelInitializer extends ChannelInitializer<SocketChannel> 
   protected void initChannel(SocketChannel socketChannel) throws Exception {
     ChannelPipeline pipeline = socketChannel.pipeline();
 
+    PortumVoteDecoder voteDecoder = PortumVoteDecoder
+        .withPrivateKey(serverConfig.getKeyPair().getPrivate());
     pipeline.addLast("protocolHandler", protocolHandler);
-    pipeline.addLast("voteDecoder", new PortumVoteDecoder(serverConfig));
+    pipeline.addLast("voteDecoder", voteDecoder);
     pipeline.addLast("voteHandler", new PortumVoteHandler(serverConfig));
   }
 }
