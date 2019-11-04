@@ -55,14 +55,17 @@ dependencies {
 # Usage
 
 As soon as you have imported the server dependency the usage will be pretty much straight forward.   
-Just create a portum server condig with the needed vote listeners and create and start a server
+Just create a portum server config with the needed vote listeners and create and start a server
 with this config. Have fun!
 
 ```java
 public final class ServerExample {
   private final PortumServer server = PortumServerFactory.createServer(PortumServerConfig
-      .createBuilder()
-      .createPortumServerConfig());
+      .newBuilder()
+      .withHost("localhost")
+      .withPort(80808)
+      .withListeners(Arrays.asList())
+      .build());
   
   public ServerExample() {
     server.start();
