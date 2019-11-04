@@ -20,7 +20,6 @@ public class PortumChannelInitializer extends ChannelInitializer<SocketChannel> 
 
   @Override
   protected void initChannel(SocketChannel socketChannel) throws Exception {
-
     ChannelPipeline pipeline = socketChannel.pipeline();
 
     pipeline.addLast("protocolHandler", protocolHandler);

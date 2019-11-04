@@ -21,7 +21,6 @@ public class ServerBootstrapProvider implements Provider<ServerBootstrap> {
 
   @Override
   public ServerBootstrap get() {
-
     // Create event loops
     EventLoopGroup bossGroup = NettyUtils.createBossGroup(1);
     EventLoopGroup workerGroup = NettyUtils.createWorkerGroup(4);

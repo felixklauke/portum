@@ -27,7 +27,6 @@ public class PortumVoteDecoder extends ByteToMessageDecoder {
   @Override
   protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf,
     List<Object> list) {
-
     // Check message size
     int readableBytes = byteBuf.readableBytes();
     if (readableBytes != 256) {
@@ -56,7 +55,6 @@ public class PortumVoteDecoder extends ByteToMessageDecoder {
    * @return The decrypted data.
    */
   private byte[] decrypt(byte[] bytes) {
-
     Cipher cipher;
     try {
       cipher = Cipher.getInstance(CIPHER);

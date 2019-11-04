@@ -9,7 +9,6 @@ import java.util.Objects;
 public class PortumServerFactory {
 
   public static PortumServer createServer(PortumServerConfig serverConfig) {
-
     Objects.requireNonNull(serverConfig, "Config cannot be null");
 
     Theresa theresa = TheresaFactory.create(new PortumServerModule(serverConfig));

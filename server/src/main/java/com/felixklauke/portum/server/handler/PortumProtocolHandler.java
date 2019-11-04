@@ -16,7 +16,6 @@ public class PortumProtocolHandler extends ChannelInboundHandlerAdapter {
 
   @Override
   public void channelActive(ChannelHandlerContext ctx) {
-
     // Obtain channel
     Channel channel = ctx.channel();
 
@@ -31,7 +30,6 @@ public class PortumProtocolHandler extends ChannelInboundHandlerAdapter {
    * @param protocolVersion The protocol version.
    */
   private void sendHandshake(Channel channel, ProtocolVersion protocolVersion) {
-
     if (protocolVersion == ProtocolVersion.V1) {
       channel.writeAndFlush(PROTOCOL_PREFIX + "1.0");
     }

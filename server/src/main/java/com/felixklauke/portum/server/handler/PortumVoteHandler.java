@@ -20,7 +20,6 @@ public class PortumVoteHandler extends SimpleChannelInboundHandler<Vote> {
   @Override
   protected void channelRead0(ChannelHandlerContext channelHandlerContext, Vote vote)
     throws Exception {
-
     List<VoteListener> listeners = serverConfig.getListeners();
     listeners.forEach(listener -> listener.handleVote(vote));
   }

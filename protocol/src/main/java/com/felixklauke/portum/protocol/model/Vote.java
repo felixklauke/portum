@@ -33,7 +33,6 @@ public class Vote {
    * @return The vote model.
    */
   public static Vote fromString(String string) {
-
     // Create tokenizer
     StringTokenizer tokenizer = new StringTokenizer(string, DELIMITER);
 

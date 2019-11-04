@@ -27,7 +27,6 @@ public class NettyPortumServer implements PortumServer {
 
   @Override
   public ListenableFuture<Void> start() {
-
     ChannelFuture channelFuture = serverBootstrap
       .bind(serverConfig.getHost(), serverConfig.getPort())
       .syncUninterruptibly();
@@ -41,7 +40,6 @@ public class NettyPortumServer implements PortumServer {
 
   @Override
   public ListenableFuture<Void> stop() {
-
     if (channel == null) {
       return Futures
         .immediateFailedFuture(new IllegalStateException("Can't stop a nun running server."));
@@ -56,7 +54,6 @@ public class NettyPortumServer implements PortumServer {
 
   @Override
   public void registerVoteListener(VoteListener voteListener) {
-
     List<VoteListener> listeners = serverConfig.getListeners();
     listeners.add(voteListener);
   }

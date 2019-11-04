@@ -17,7 +17,6 @@ public class PortumServerConfig {
   private final KeyPair keyPair;
 
   PortumServerConfig(List<VoteListener> listeners, String host, int port, KeyPair keyPair) {
-
     Objects.requireNonNull(listeners, "Listeners cannot be null.");
     Objects.requireNonNull(host, "Host cannot be null.");
     Objects.requireNonNull(keyPair, "Key Pair cannot be null.");
@@ -35,7 +34,6 @@ public class PortumServerConfig {
   }
 
   public static PortumServerConfigBuilder createBuilder() {
-
     return new PortumServerConfigBuilder();
   }
 

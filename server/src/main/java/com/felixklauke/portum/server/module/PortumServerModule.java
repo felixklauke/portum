@@ -22,7 +22,6 @@ public class PortumServerModule extends AbstractModule {
 
   @Override
   protected void configure() {
-
     bind(PortumServerConfig.class).toInstance(serverConfig);
     bind(PortumServer.class).to(NettyPortumServer.class);
 
@@ -32,7 +31,6 @@ public class PortumServerModule extends AbstractModule {
   @Provides
   public ChannelInitializer<SocketChannel> provideServerChannelInitializer(
     PortumProtocolHandler protocolHandler, PortumServerConfig serverConfig) {
-
     return new PortumChannelInitializer(protocolHandler, serverConfig);
   }
 }
