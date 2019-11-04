@@ -11,7 +11,8 @@ public class PortumServerFactory {
   public static PortumServer createServer(PortumServerConfig serverConfig) {
     Preconditions.checkNotNull(serverConfig);
 
-    Theresa theresa = TheresaFactory.create(new PortumServerModule(serverConfig));
+    PortumServerModule serverModule = PortumServerModule.withConfig(serverConfig);
+    Theresa theresa = TheresaFactory.create(serverModule);
     return theresa.getInstance(PortumServer.class);
   }
 }

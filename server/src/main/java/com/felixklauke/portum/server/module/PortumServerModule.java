@@ -6,6 +6,7 @@ import com.felixklauke.portum.server.config.PortumServerConfig;
 import com.felixklauke.portum.server.handler.PortumChannelInitializer;
 import com.felixklauke.portum.server.handler.PortumProtocolHandler;
 import com.felixklauke.portum.server.provider.ServerBootstrapProvider;
+import com.google.common.base.Preconditions;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import io.netty.bootstrap.ServerBootstrap;
@@ -16,8 +17,13 @@ public class PortumServerModule extends AbstractModule {
 
   private final PortumServerConfig serverConfig;
 
-  public PortumServerModule(PortumServerConfig serverConfig) {
+  private PortumServerModule(PortumServerConfig serverConfig) {
     this.serverConfig = serverConfig;
+  }
+
+  public static PortumServerModule withConfig(PortumServerConfig serverConfig) {
+    Preconditions.checkNotNull(serverConfig);
+    return new PortumServerModule(serverConfig);
   }
 
   @Override
