@@ -45,7 +45,7 @@
         </configuration>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>3.1.1</version>
+        <version>3.2.0</version>
       </plugin>
     </plugins>
   </build>
